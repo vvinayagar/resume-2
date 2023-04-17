@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\CompanyController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -41,6 +43,21 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('profile/photo')->name('profile.photo.')->group(function() {
         Route::post('/add',[ProfileController::class, 'addPhoto'])->name('add');
+    });
+
+    Route::prefix('admin')->name('admin.')->group(function() {
+        Route::prefix('skill')->name('skill.')->group(function() {
+            Route::get("/" , [SkillController::class, 'index'])->name('index');
+            Route::post("/" , [SkillController::class, 'store'])->name('store');
+            Route::delete("/" , [SkillController::class, 'delete'])->name('delete');
+        });
+
+        Route::prefix('company')->name('company.')->group(function() {
+            Route::get("/" , [CompanyController::class, 'index'])->name('index');
+            Route::post("/" , [CompanyController::class, 'store'])->name('store');
+            Route::delete("/" , [CompanyController::class, 'delete'])->name('delete');
+        });
+
     });
 });
 

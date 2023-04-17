@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('year');
             $table->integer('level');
             $table->integer('user_id');
+            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }

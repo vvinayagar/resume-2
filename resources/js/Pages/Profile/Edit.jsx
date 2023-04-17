@@ -4,6 +4,7 @@ import UpdatePasswordForm from './Partials/UpdatePasswordForm';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm';
 import UpdateProfilePhotoForm from './Partials/UpdateProfilePhotoForm';
 import { Head } from '@inertiajs/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Edit({ auth, mustVerifyEmail, status }) {
     return (

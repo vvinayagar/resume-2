@@ -7,7 +7,7 @@ import { Transition } from '@headlessui/react';
 import { Dropdown } from 'react-bootstrap';
 import { useState } from 'react';
 
-export default function UpdateProfileInformation({ mustVerifyEmail, status, className }) {
+export default function UpdateSocialMedia({ mustVerifyEmail, status, className }) {
     const user = usePage().props.auth.user;
 
     const { data, setData, patch, errors, processing, recentlySuccessful } = useForm({
